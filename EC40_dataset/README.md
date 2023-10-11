@@ -2,6 +2,8 @@
 
 ### EC40 is an English-Centric Multilingual Machine Translation Dataset. It has over 60 Million sentences including 40 Languages across 5 Language Families. 
 
+#### Note: The dataset is cleaned and pre-processed using tools like Moses, for more details, please refer to the paper.
+
 ### Features:
 1. We carefully balanced the dataset across resources and languages by strictly maintaining each resource group containing 5 language families and each family consists of 8 representative languages.
 2. EC40 covers a wide spectrum of resource availability, ranging from High(5M) to Medium(1M), Low(100K), and extremely-Low(50K) resources.
