@@ -14,10 +14,14 @@ The repository of the EMNLP 2023 paper "Towards a Better Understanding of Variat
 EC40 is a Multilingual Neural Machine Translation (MNMT) Training Dataset intended to better understand and study MNMT and Zero-Shot NMT. It contains 66 Million English-Centric Sentences covering 40 Languages (excluding English) across 5 Language Families, sampled from OPUS Corpus. 
 
 **Features:**
-* _Wide Resource Spectrum:_ ranging from High(5M) to Medium(1M), Low(100K), and extremely-Low(50K) resources.
-* _Linguistic Diversity:_ Each language family is represented at every resource level with two languages, highlighting a balanced and inclusive sampling approach.
-* _As a Benchmark:_  In total, there are 80 English-centric directions for training and 1,640 directions (including all supervised and ZS directions) for evaluation. Therefore, the EC40 dataset also serves as a benchmark to study multilingual and zero-shot MT.
-* _Multi-parallel Utilization:_ We make use of Ntrex-128 and Flores-200 as our validation and test datasets, respectively, because of their unique multiparallel characteristics, allowing for further analyses.
+* _Wide Resource Spectrum:_
+   * ranging from High(5M) to Medium(1M), Low(100K), and extremely-Low(50K) resources.
+* _Linguistic Diversity:_
+   * Each language family is represented at every resource level with two languages, highlighting a balanced and inclusive sampling approach.
+* _As a Benchmark:_
+   * In total, there are 80 English-centric directions for training and 1,640 directions (including all supervised and ZS directions) for evaluation. Therefore, the EC40 dataset also serves as a benchmark to study multilingual and zero-shot MT.
+* _Multi-parallel Utilization:_
+   * We make use of Ntrex-128 and Flores-200 as our validation and test datasets, respectively, because of their unique multiparallel characteristics, allowing for further analyses.
    
 ## Download and Use EC40 as a Benchmark
 
