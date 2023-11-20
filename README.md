@@ -29,10 +29,11 @@ EC40 is a Multilingual Neural Machine Translation (MNMT) Training Dataset intend
 
 * Step 1: [Download EC40 Fairseq data-bin](https://drive.google.com/drive/folders/1nZsDnj3mNKynk2D46frnLfmR9qTFzVM9?usp=drive_link). We provide the Fairseq Binarized EC40 Training set for easy training. If you want to use the EC40 as a benchmark (with its original SentencePiece dictionary), then you should download this. Note: the data-bin is sharded to avoid high RAM consumption.
 
-* Step 2: [Prepare Validation and test set](https://github.com/Smu-Tan/ZS-NMT-Variations/tree/main/get-val-test-data). We provide the Scripts building the validation and test set using Ntrex-128 and Flores-200. If you want to use the EC40 as a benchmark (with its original SentencePiece dictionary), then you should follow this. Note: we merged the Flores-200 _dev_ and _dev-test_ as the final test set.
+* Step 2: [Prepare Validation and test set](https://github.com/Smu-Tan/ZS-NMT-Variations/tree/main/get-val-test-data/get_fairseq_format_scripts). We provide the Scripts building the validation and test set using Ntrex-128 and Flores-200. If you want to use the EC40 as a benchmark (with its original SentencePiece dictionary), then you should follow this. Note: we merged the Flores-200 _dev_ and _dev-test_ as the final test set.
 
-* Step 3: [copy val set to _fairseq-data-bin-sharded_](https://github.com/Smu-Tan/ZS-NMT-Variations/tree/main/get-val-test-data). This step is to make sure the val set is contained in the training set (fairseq training fashion).
+* Step 3: [copy val set to _fairseq-data-bin-sharded_](https://github.com/Smu-Tan/ZS-NMT-Variations/tree/main/get-val-test-data/get_fairseq_format_scripts). This step is to make sure the val set is contained in the training set (fairseq training fashion).
 
+* [download trained SPM Dictionary and Model](https://drive.google.com/drive/folders/1tsZzQraZ7nXTyYjUCaM_JVWUnKRe_aAa?usp=drive_link). You can download our trained SentencePiece Dictionary and Model (`it is also contained under ZS-NMT-Variations/get-val-test-data/spm_dict`)
 
 * [Training scripts](https://drive.google.com/drive/folders/1XFdZ9SNoJF8p8tJ-b488fh3Qyv0hXPHy?usp=drive_link). Scripts for training baseline models on EC40.
 
@@ -45,14 +46,12 @@ EC40 is a Multilingual Neural Machine Translation (MNMT) Training Dataset intend
 
 To use "Plain" EC40, we provide the Simplified Procedure below:
 1. Download Plain EC40 Dataset and prepare the val & test sets.
-2. Download the provided SPM dict and model. / Train your own SPM dict and model.
+2. Train your own SPM dict and model. (Otherwise, Go to the section `Use EC40 as a Benchmark`)
 3. Build the Sharded Dataset
 
 * [Download EC40 Dataset (Plain)](https://drive.google.com/drive/folders/1nZsDnj3mNKynk2D46frnLfmR9qTFzVM9?usp=drive_link). Here "Plain" means it is not processed by the BPE, all data are in txt format. EC40 is open-to-use, we carefully pre-processed it. thus, no need to run additional preprocessing commands like deduplication, Moses normalization, etc.
 
-* [Prepare Validation and test set (Plain)](https://github.com/Smu-Tan/ZS-NMT-Variations/tree/main/get-val-test-data). We provide the Scripts building the "Plain" validation and test set using Ntrex-128 and Flores-200. Note: we merged the Flores-200 _dev_ and _dev-test_ as the final test set.
-
-* [download trained SPM Dictionary and Model](https://drive.google.com/drive/folders/1tsZzQraZ7nXTyYjUCaM_JVWUnKRe_aAa?usp=drive_link). If you download the "Plain" dataset, you can make use of our trained SentencePiece Dictionary and Model.
+* [Prepare Validation and test set (Plain)](https://github.com/Smu-Tan/ZS-NMT-Variations/tree/main/get-val-test-data/get_plain_scripts). We provide the Scripts building the "Plain" validation and test set using Ntrex-128 and Flores-200. Note: we merged the Flores-200 _dev_ and _dev-test_ as the final test set.
 
 * [Script of Building Sharded Dataset](https://drive.google.com/file/d/1FAJEHcv8rM06iKF4zbuk2IYs2i6Tyz5A/view?usp=drive_link). The script template of how to build the sharded dataset if you use the "Plain" dataset. You do not have to follow this step if you want to use Huggingface or other tools than Fairseq.
 
