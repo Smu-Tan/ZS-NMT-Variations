@@ -41,13 +41,13 @@ EC40 is a Multilingual Neural Machine Translation (MNMT) Training Dataset intend
 ## Download "Plain" EC40 Dataset
 
 To use "Plain" EC40, we provide the Simplified Procedure below:
-1. Download Plain EC40 Dataset
+1. Download Plain EC40 Dataset and prepare the val & test sets.
 2. Download the provided SPM dict and model. / Train your own SPM dict and model.
 3. Build the Sharded Dataset
 
-* Step 1: [Download EC40 Dataset (Plain)](https://drive.google.com/drive/folders/1nZsDnj3mNKynk2D46frnLfmR9qTFzVM9?usp=drive_link). Here "Plain" means it is not processed by the BPE, all data are in txt format. EC40 is open-to-use, we carefully pre-processed it. thus, no need to run additional preprocessing commands like deduplication, Moses normalization, etc.
+* [Download EC40 Dataset (Plain)](https://drive.google.com/drive/folders/1nZsDnj3mNKynk2D46frnLfmR9qTFzVM9?usp=drive_link). Here "Plain" means it is not processed by the BPE, all data are in txt format. EC40 is open-to-use, we carefully pre-processed it. thus, no need to run additional preprocessing commands like deduplication, Moses normalization, etc.
 
-* Step 2: [Prepare Validation and test set (Plain)](https://github.com/Smu-Tan/ZS-NMT-Variations/tree/main/get-val-test-data). We provide the Scripts building the "Plain" validation and test set using Ntrex-128 and Flores-200. Note: we merged the Flores-200 _dev_ and _dev-test_ as the final test set.
+* [Prepare Validation and test set (Plain)](https://github.com/Smu-Tan/ZS-NMT-Variations/tree/main/get-val-test-data). We provide the Scripts building the "Plain" validation and test set using Ntrex-128 and Flores-200. Note: we merged the Flores-200 _dev_ and _dev-test_ as the final test set.
 
 * [download trained SPM Dictionary and Model](https://drive.google.com/drive/folders/1tsZzQraZ7nXTyYjUCaM_JVWUnKRe_aAa?usp=drive_link). If you download the "Plain" dataset, you can make use of our trained SentencePiece Dictionary and Model.
 
