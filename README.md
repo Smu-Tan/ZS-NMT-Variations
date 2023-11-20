@@ -29,6 +29,8 @@ EC40 is a Multilingual Neural Machine Translation (MNMT) Training Dataset intend
 
 Please install cyrtranslit first by `pip install cyrtranslit`, which will be used to build test set.
 
+Clone this repo by `git clone https://github.com/Smu-Tan/ZS-NMT-Variations.git`, then run scripts under this directory.
+
 * Step 1: [Download EC40 Fairseq data-bin](https://drive.google.com/file/d/1Miqeg94qzBr3i_JcoyNOAPhlRzk9flG2/view?usp=drive_link). We provide the Fairseq Binarized EC40 Training set for easy training. If you want to use the EC40 as a benchmark (with its original SentencePiece dictionary), then you should download this. Note: the data-bin is sharded to avoid high RAM consumption.
 
 * Step 2: [Prepare Validation and test set](https://github.com/Smu-Tan/ZS-NMT-Variations/tree/main/get-val-test-data/get_fairseq_format_scripts). We provide the Scripts building the validation and test set using Ntrex-128 and Flores-200. If you want to use the EC40 as a benchmark (with its original SentencePiece dictionary), then you should follow this. Note: we merged the Flores-200 _dev_ and _dev-test_ as the final test set.
@@ -47,6 +49,8 @@ Please install cyrtranslit first by `pip install cyrtranslit`, which will be use
 ## Download "Plain" EC40 Dataset
 
 Please install cyrtranslit first by `pip install cyrtranslit`, which will be used to build test set.
+
+Clone this repo by `git clone https://github.com/Smu-Tan/ZS-NMT-Variations.git`, then run scripts under this directory.
 
 To use "Plain" EC40, we provide the Simplified Procedure below:
 1. Download Plain EC40 Dataset and prepare the val & test sets.
