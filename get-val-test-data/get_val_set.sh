@@ -1,12 +1,19 @@
+#!/bin/bash
 
-
+cd ZS-NMT-Variations/get-val-test-data
 
 TOOLDIR=tools
 SPMDIR=spm_dict # the spm model and vocab, and fairseq dict directory (place it if you use your own vocab)
-num_cpus=10
+num_cpus=20 #change this to your num_cpus
 clean_script_dir=$TOOLDIR/data_preprocess/clean_scripts
 tokenize_script_dir=$TOOLDIR/data_preprocess/tokenize_scripts
 
+
+### set up if you encountered perl: warning: Please check that your locale settings: LANGUAGE = (unset), LC_ALL = (unset) ...
+export LANGUAGE=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+export LC_CTYPE=en_US.UTF-8
 
 # ------------------------ 1. Extract NTREX raw data ------------------------ #
 
@@ -42,9 +49,8 @@ for i in "${!AR[@]}"; do
     TGT=${AR[i]}
     SRC=en
 
-    ### ------------------------ 2.1. clean ------------------------ #
-
-    ##  ------- normalize-punctuation -------
+    ## ------------------------ 2.1. clean ------------------------ #
+    #  ------- normalize-punctuation -------
     cat $RAW_DATA_DIR/test.$SRC-$TGT.$SRC | perl ${clean_script_dir}/normalize-punctuation.pl -l ${SRC} -threads ${num_cpus} > $TOK_DATA_DIR/test.$SRC-$TGT.$SRC.norm
     cat $RAW_DATA_DIR/test.$SRC-$TGT.$TGT | perl ${clean_script_dir}/normalize-punctuation.pl -l ${TGT} -threads ${num_cpus} > $TOK_DATA_DIR/test.$SRC-$TGT.$TGT.norm
 
@@ -56,12 +62,11 @@ done
 find ${TOK_DATA_DIR} -type f -name "*.norm" | xargs rm
 
 #### ------------------------ 2.3. Apply SPM ------------------------ #
-for lang in bg so ca da be bs mt es uk am hi ro no ti de cs lb pt nl mr is ne ur oc ast ha sv kab gu ar fr ru it pl sr sd he af kn bn; do
-    spm_encode --model ${SPM_MODEL_DIR} < ${TOK_DATA_DIR}/test.en-${lang}.en > ${SPM_DATA_DIR}/test.en-${lang}.en
-    spm_encode --model ${SPM_MODEL_DIR} < ${TOK_DATA_DIR}/test.en-${lang}.${lang} > ${SPM_DATA_DIR}/test.en-${lang}.${lang}
+for curlang in bg so ca da be bs mt es uk am hi ro no ti de cs lb pt nl mr is ne ur oc ast ha sv kab gu ar fr ru it pl sr sd he af kn bn; do
+    spm_encode --model ${SPM_MODEL_DIR} < ${TOK_DATA_DIR}/test.en-${curlang}.en > ${SPM_DATA_DIR}/test.en-${curlang}.en
+    spm_encode --model ${SPM_MODEL_DIR} < ${TOK_DATA_DIR}/test.en-${curlang}.${curlang} > ${SPM_DATA_DIR}/test.en-${curlang}.${curlang}
     
 done
-
 # ------------------------ 3. Fairseq preparation ------------------------ #
 FAIRSEQ_DATA_DIR=EC40-NTREX-val/fairseq/eval_en_data
 FAIRSEQ_VOCAB_DIR=$SPMDIR/fairseq_dict.txt
@@ -80,5 +85,9 @@ for SRC in en; do
         --workers ${num_cpus}
     done
 done
+
+mv EC40-NTREX-val/fairseq/eval_en_data EC40-NTREX-val-data-bin
+rm -R EC40-NTREX-val #keep if you need non-fairseq data
+rm -R NTREX
 
 echo "Done ALL!"
