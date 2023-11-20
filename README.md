@@ -27,7 +27,7 @@ EC40 is a Multilingual Neural Machine Translation (MNMT) Training Dataset intend
 
 **We highly recommend you use EC40 in this way unless you want to change the SPM dictionary.**
 
-Please install cyrtranslit first by `pip install cyrtranslit`.
+Please install cyrtranslit first by `pip install cyrtranslit`, which will be used to build test set.
 
 * Step 1: [Download EC40 Fairseq data-bin](https://drive.google.com/file/d/1Miqeg94qzBr3i_JcoyNOAPhlRzk9flG2/view?usp=drive_link). We provide the Fairseq Binarized EC40 Training set for easy training. If you want to use the EC40 as a benchmark (with its original SentencePiece dictionary), then you should download this. Note: the data-bin is sharded to avoid high RAM consumption.
 
@@ -45,6 +45,8 @@ Please install cyrtranslit first by `pip install cyrtranslit`.
 
 
 ## Download "Plain" EC40 Dataset
+
+Please install cyrtranslit first by `pip install cyrtranslit`, which will be used to build test set.
 
 To use "Plain" EC40, we provide the Simplified Procedure below:
 1. Download Plain EC40 Dataset and prepare the val & test sets.
