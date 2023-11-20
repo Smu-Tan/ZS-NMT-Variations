@@ -31,6 +31,9 @@ EC40 is a Multilingual Neural Machine Translation (MNMT) Training Dataset intend
 
 * Step 2: [Prepare Validation and test set](https://github.com/Smu-Tan/ZS-NMT-Variations/tree/main/get-val-test-data). We provide the Scripts building the validation and test set using Ntrex-128 and Flores-200. If you want to use the EC40 as a benchmark (with its original SentencePiece dictionary), then you should follow this. Note: we merged the Flores-200 _dev_ and _dev-test_ as the final test set.
 
+* Step 3: [copy val set to _fairseq-data-bin-sharded_](https://github.com/Smu-Tan/ZS-NMT-Variations/tree/main/get-val-test-data). This step is to make sure the val set is contained in the training set (fairseq training fashion).
+
+
 * [Training scripts](https://drive.google.com/drive/folders/1XFdZ9SNoJF8p8tJ-b488fh3Qyv0hXPHy?usp=drive_link). Scripts for training baseline models on EC40.
 
 * [Evaluation scripts](https://drive.google.com/drive/folders/1XFdZ9SNoJF8p8tJ-b488fh3Qyv0hXPHy?usp=drive_link). Scripts for evaluating baseline models on both Supervised and Zero-Shot directions.
