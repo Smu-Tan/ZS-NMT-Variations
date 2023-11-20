@@ -39,9 +39,9 @@ Clone this repo by `git clone https://github.com/Smu-Tan/ZS-NMT-Variations.git`,
 
 * [download trained SPM Dictionary and Model](https://drive.google.com/drive/folders/1tsZzQraZ7nXTyYjUCaM_JVWUnKRe_aAa?usp=drive_link). You can download our trained SentencePiece Dictionary and Model (`it is also contained under ZS-NMT-Variations/get-val-test-data/spm_dict`)
 
-* [Training scripts](https://drive.google.com/drive/folders/1XFdZ9SNoJF8p8tJ-b488fh3Qyv0hXPHy?usp=drive_link). Scripts for training baseline models on EC40.
+* [Training scripts](https://github.com/Smu-Tan/ZS-NMT-Variations/tree/main/train-eval-baseline-scripts). Scripts for training baseline models on EC40.
 
-* [Evaluation scripts](https://drive.google.com/drive/folders/1XFdZ9SNoJF8p8tJ-b488fh3Qyv0hXPHy?usp=drive_link). Scripts for evaluating baseline models on both Supervised and Zero-Shot directions.
+* [Evaluation scripts](https://github.com/Smu-Tan/ZS-NMT-Variations/tree/main/train-eval-baseline-scripts). Scripts for evaluating baseline models on both Supervised and Zero-Shot directions.
 
 * [Baseline Model Checkpoints](https://drive.google.com/drive/folders/1H9PU05mriTHWCWTFXsOM7KYlXpqZte7T?usp=drive_link). We also provide Checkpoints of baseline models.
 
