@@ -69,10 +69,11 @@ To use "Plain" EC40, we provide the Simplified Procedure below:
 Please cite both our paper (tan2023towards) and OPUS (tiedemann2012parallel) when you only use the EC40 **training** dataset.
 
 ```
-@article{tan2023towards,
+@inproceedings{tan2023towards,
   title={Towards a Better Understanding of Variations in Zero-Shot Neural Machine Translation Performance},
   author={Tan, Shaomu and Monz, Christof},
-  journal={arXiv preprint arXiv:2310.10385},
+  booktitle={Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing},
+  pages={13553--13568},
   year={2023}
 }
 ```
