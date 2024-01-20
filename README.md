@@ -4,8 +4,8 @@ The repository of the EMNLP 2023 paper "Towards a Better Understanding of Variat
 
 ## EC40
 
-| Resource (size) | Germanic | Romance | Slavic | Indo-Aryan |
-| --- | --- | --- | --- | --- |
+| Resource (size) | Germanic | Romance | Slavic | Indo-Aryan | Afro-Asiatic |
+| --- | --- | --- | --- | --- | --- |
 | High (5M) | de, nl | fr, es | ru, cs | hi, bn | ar, he |
 | Medium (1M) | sv, da | it, pt | pl, bg | kn, mr | mt, ha |
 | Low (100k) | af, lb | ro, oc | uk, sr | sd, gu | ti, am |
