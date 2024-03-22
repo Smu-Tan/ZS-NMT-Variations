@@ -1,6 +1,6 @@
 # Towards a Better Understanding of Variations in Zero-Shot Neural Machine Translation Performance, EMNLP 2023
 
-The repository of the EMNLP 2023 paper "Towards a Better Understanding of Variations in Zero-Shot Neural Machine Translation Performance", see [preprint](https://arxiv.org/abs/2310.10385).
+The repository of the EMNLP 2023 paper "Towards a Better Understanding of Variations in Zero-Shot Neural Machine Translation Performance", see [paper](https://arxiv.org/abs/2310.10385).
 
 ## EC40
 
