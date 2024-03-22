@@ -111,5 +111,5 @@ Please also cite Ntrex-128 and Flores-200 if you use the same validation and tes
 
 ## Acknowledgements
 * EC40 is sampled from OPUS Corpus. We thank Jörg Tiedemann and other researchers who contributed to the OPUS. 
-* We thank researchers who contributed to the wonderful Ntrex-128 and Flores-200. 
+* We thank researchers who contributed to the Ntrex-128 and Flores-200. 
 
