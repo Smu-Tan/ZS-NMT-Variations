@@ -38,19 +38,6 @@ EC40 is a Multilingual Neural Machine Translation (MNMT) Training Dataset intend
 
 * [Baseline Model Checkpoints](https://drive.google.com/drive/folders/1H9PU05mriTHWCWTFXsOM7KYlXpqZte7T?usp=drive_link). We also provide Checkpoints of baseline models.
 
-
-## RE-Construct EC40 (val and test sets) step by step
-
-If you want to re-construct validation and test sets / replace them, we give guidance below to do pre-processing.
-
-Please install cyrtranslit first by `pip install cyrtranslit`, which will be used to build test set.
-Clone this repo by `git clone https://github.com/Smu-Tan/ZS-NMT-Variations.git`, then run scripts under this directory.
-
-* Step 1: [Prepare Validation and test set](https://github.com/Smu-Tan/ZS-NMT-Variations/tree/main/get-val-test-data/get_fairseq_format_scripts). We provide the Scripts building the validation and test set using Ntrex-128 and Flores-200. If you want to use the EC40 as a benchmark (with its original SentencePiece dictionary), then you should follow this. Note: we merged the Flores-200 _dev_ and _dev-test_ as the final test set.
-
-* Step 2: [copy val set to _fairseq-data-bin-sharded_](https://github.com/Smu-Tan/ZS-NMT-Variations/tree/main/get-val-test-data/get_fairseq_format_scripts). This step is to make sure the val set is contained in the training set (fairseq training fashion).
-
-
 ## Download "Plain" (pure txt files) EC40 Dataset
 
 Please install cyrtranslit first by `pip install cyrtranslit`, which will be used to build test set.
@@ -66,6 +53,18 @@ To use "Plain" EC40, we provide the Simplified Procedures below:
 * [Prepare Validation and test set (Plain)](https://github.com/Smu-Tan/ZS-NMT-Variations/tree/main/get-val-test-data/get_plain_scripts). We provide the Scripts building the "Plain" validation and test set using Ntrex-128 and Flores-200. Note: we merged the Flores-200 _dev_ and _dev-test_ as the final test set.
 
 * [Script of Building Sharded Dataset](https://drive.google.com/file/d/1FAJEHcv8rM06iKF4zbuk2IYs2i6Tyz5A/view?usp=drive_link). The script template of how to build the sharded dataset if you use the "Plain" dataset. You do not have to follow this step if you want to use Huggingface or other tools than Fairseq.
+
+
+## RE-Construct EC40 (val and test sets) step by step
+
+If you want to re-construct validation and test sets / replace them, we give guidance below to do pre-processing.
+
+Please install cyrtranslit first by `pip install cyrtranslit`, which will be used to build test set.
+Clone this repo by `git clone https://github.com/Smu-Tan/ZS-NMT-Variations.git`, then run scripts under this directory.
+
+* Step 1: [Prepare Validation and test set](https://github.com/Smu-Tan/ZS-NMT-Variations/tree/main/get-val-test-data/get_fairseq_format_scripts). We provide the Scripts building the validation and test set using Ntrex-128 and Flores-200. If you want to use the EC40 as a benchmark (with its original SentencePiece dictionary), then you should follow this. Note: we merged the Flores-200 _dev_ and _dev-test_ as the final test set.
+
+* Step 2: [copy val set to _fairseq-data-bin-sharded_](https://github.com/Smu-Tan/ZS-NMT-Variations/tree/main/get-val-test-data/get_fairseq_format_scripts). This step is to make sure the val set is contained in the training set (fairseq training fashion).
 
 
 ## Citation
