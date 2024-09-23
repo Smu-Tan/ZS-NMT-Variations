@@ -23,19 +23,12 @@ EC40 is a Multilingual Neural Machine Translation (MNMT) Training Dataset intend
 * _Multi-parallel Utilization:_
    * We make use of Ntrex-128 and Flores-200 as our validation and test datasets, respectively, because of their unique multiparallel characteristics, allowing for further analyses.
    
-## Download and Use EC40 as a Benchmark
+## Download and Use EC40 directly (Fairseq)
+**We highly recommend you use EC40 in this way unless you 1. do not use Fairseq; 2. want to change the SPM dictionary.**
 
-**We highly recommend you use EC40 in this way unless you want to change the SPM dictionary.**
+* [Download EC40 Fairseq train-val set data-bin](https://drive.google.com/file/d/1Miqeg94qzBr3i_JcoyNOAPhlRzk9flG2/view?usp=drive_link). We provide our pre-processed training-validation sets in Fairseq bin format, which is the easiest way to reproduce.
 
-Please install cyrtranslit first by `pip install cyrtranslit`, which will be used to build test set.
-
-Clone this repo by `git clone https://github.com/Smu-Tan/ZS-NMT-Variations.git`, then run scripts under this directory.
-
-* Step 1: [Download EC40 Fairseq data-bin](https://drive.google.com/file/d/1Miqeg94qzBr3i_JcoyNOAPhlRzk9flG2/view?usp=drive_link). We provide the Fairseq Binarized EC40 Training set for easy training. If you want to use the EC40 as a benchmark (with its original SentencePiece dictionary), then you should download this. Note: the data-bin is sharded to avoid high RAM consumption.
-
-* Step 2: [Prepare Validation and test set](https://github.com/Smu-Tan/ZS-NMT-Variations/tree/main/get-val-test-data/get_fairseq_format_scripts). We provide the Scripts building the validation and test set using Ntrex-128 and Flores-200. If you want to use the EC40 as a benchmark (with its original SentencePiece dictionary), then you should follow this. Note: we merged the Flores-200 _dev_ and _dev-test_ as the final test set.
-
-* Step 3: [copy val set to _fairseq-data-bin-sharded_](https://github.com/Smu-Tan/ZS-NMT-Variations/tree/main/get-val-test-data/get_fairseq_format_scripts). This step is to make sure the val set is contained in the training set (fairseq training fashion).
+* [Download EC40 Fairseq test set data-bin](https://drive.google.com/file/d/1jp2SxULDed3KnIOM3gYTIe3557NdWKX9/view?usp=drive_link). We provide the pre-processed test set in Fairseq bin format for direct evaluation as well.
 
 * [download trained SPM Dictionary and Model](https://drive.google.com/drive/folders/1tsZzQraZ7nXTyYjUCaM_JVWUnKRe_aAa?usp=drive_link). You can download our trained SentencePiece Dictionary and Model (`it is also contained under ZS-NMT-Variations/get-val-test-data/spm_dict`)
 
@@ -46,13 +39,24 @@ Clone this repo by `git clone https://github.com/Smu-Tan/ZS-NMT-Variations.git`,
 * [Baseline Model Checkpoints](https://drive.google.com/drive/folders/1H9PU05mriTHWCWTFXsOM7KYlXpqZte7T?usp=drive_link). We also provide Checkpoints of baseline models.
 
 
-## Download "Plain" EC40 Dataset
+## RE-Construct EC40 (val and test sets) step by step
+
+If you want to re-construct validation and test sets / replace them, we give guidance below to do pre-processing.
 
 Please install cyrtranslit first by `pip install cyrtranslit`, which will be used to build test set.
-
 Clone this repo by `git clone https://github.com/Smu-Tan/ZS-NMT-Variations.git`, then run scripts under this directory.
 
-To use "Plain" EC40, we provide the Simplified Procedure below:
+* Step 1: [Prepare Validation and test set](https://github.com/Smu-Tan/ZS-NMT-Variations/tree/main/get-val-test-data/get_fairseq_format_scripts). We provide the Scripts building the validation and test set using Ntrex-128 and Flores-200. If you want to use the EC40 as a benchmark (with its original SentencePiece dictionary), then you should follow this. Note: we merged the Flores-200 _dev_ and _dev-test_ as the final test set.
+
+* Step 2: [copy val set to _fairseq-data-bin-sharded_](https://github.com/Smu-Tan/ZS-NMT-Variations/tree/main/get-val-test-data/get_fairseq_format_scripts). This step is to make sure the val set is contained in the training set (fairseq training fashion).
+
+
+## Download "Plain" (pure txt files) EC40 Dataset
+
+Please install cyrtranslit first by `pip install cyrtranslit`, which will be used to build test set.
+Clone this repo by `git clone https://github.com/Smu-Tan/ZS-NMT-Variations.git`, then run scripts under this directory.
+
+To use "Plain" EC40, we provide the Simplified Procedures below:
 1. Download Plain EC40 Dataset and prepare the val & test sets.
 2. Train your own SPM dict and model. (Otherwise, Go to the section `Use EC40 as a Benchmark`)
 3. Build the Sharded Dataset
